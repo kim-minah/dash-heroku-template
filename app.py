@@ -81,6 +81,7 @@ fig5.for_each_annotation(lambda a: a.update(text=a.text.replace("prestige_cat=",
 
 
 app = dash.Dash(__name__,external_stylesheets=[dbc.themes.LUX])
+server = app.server
 
 tab1 = dbc.Tab([dcc.Graph(figure=fig2)], label="Scatterplot")
 tab2 = dbc.Tab([dcc.Graph(figure=fig5)], label="Boxplot by  Job Prestige Categories")
