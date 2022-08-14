@@ -91,7 +91,7 @@ app.layout = html.Div(
     [
         html.H1("Exploring the 2018 General Social Survey"),
         
-        dcc.Markdown(children = markdown_text),
+        html.Div([dcc.Markdown(children = markdown_text)],className="box"),
         
         html.H2("Mean Income, Job Prestige, Socioeconomic Index, and Years of Education by Sex"),
         
