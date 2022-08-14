@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -6,10 +5,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
 import dash
-from jupyter_dash import JupyterDash
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
+import dash_bootstrap_components as dbc
 
 gss = pd.read_csv("https://github.com/jkropko/DS-6001/raw/master/localdata/gss2018.csv",
                  encoding='cp1252', na_values=['IAP','IAP,DK,NA,uncodeable', 'NOT SURE',
@@ -81,7 +80,6 @@ fig5.update_layout(showlegend=False)
 fig5.for_each_annotation(lambda a: a.update(text=a.text.replace("prestige_cat=", "")))
 
 
-import dash_bootstrap_components as dbc
 app = dash.Dash(__name__,external_stylesheets=[dbc.themes.LUX])
 
 tab1 = dbc.Tab([dcc.Graph(figure=fig2)], label="Scatterplot")
